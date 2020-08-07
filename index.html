@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="js/myscript.js"></script>
+</head>
+<body ng-app="MyApp" ng-controller="MyCtrl">
+    <div class = "container">
+        <div class="jumbotron py-3">
+            <h1 class = "text-center">{{title}}</h1>
+            <p class = "pt-3"> India has crossed 19 lakh-mark in coronavirus cases after 52,509 people tested positive in the last 24 hours, the Union Health Ministry said this morning. Nearly 12.82 lakh patients in the country have recovered so far, 39,795 have died so far. In the last 24 hours, 857 deaths were reported The recovery rate stood at 67.19 per cent this morning, positivity rate stood at 8.47 per cent. Maharashtra has reported the highest number of cases, followed by Andhra Pradesh, Tamil Nadu, Karnataka and Uttar Pradesh. India is third on the list of worst-affected countries after the United States and Brazil The UN health agency has warned that the coronavirus pandemic would be lengthy and could lead to "response fatigue", as India and the Philippines reported a record rise in new cases.</p>
+
+            <!--all data-->
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class= "card bg-warning text-white">
+                        <div class="card-body">
+                            <h3>Confirmed Cases</h3>
+                            <h3>{{all_data.confirmed.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class= "card bg-success text-white">
+                        <div class="card-body">
+                            <h3>Recovered Cases</h3>
+                            <h3>{{all_data.recovered.value}}</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class= "card bg-danger text-white">
+                        <div class="card-body">
+                            <h3>Death Cases</h3>
+                            <h3>{{all_data.deaths.value}}</h3>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!--End data-->
+
+            <input type="text" class = "form-control mt-4" placeholder="Enter country here" ng-model="c" ng-change="get_c_data()"/>
+            
+            <!--c data-->
+            <div class = "container-fluid">
+            <h1 class="text-center mt-4 text-uppercase">{{c}} Status</h1> 
+            <div class="row text-center mt-4" >
+                <div class="col-md-4">
+                    <div class= "card bg-warning text-white">
+                        <div class="card-body">
+                            <h3>Confirmed Cases</h3>
+                            <h3>{{c_data.confirmed.value}}</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class= "card bg-success text-white">
+                        <div class="card-body">
+                            <h3>Recovered Cases</h3>
+                            <h3>{{c_data.recovered.value}}</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class= "card bg-danger text-white">
+                        <div class="card-body">
+                            <h3>Death Cases</h3>
+                            <h3>{{c_data.deaths.value}}</h3>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            </div>
+
+            <!--end c data-->
+        
+        </div>
+    </div>
+</body>
+</html>
